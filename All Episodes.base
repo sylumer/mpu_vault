@@ -1,0 +1,44 @@
+filters:
+  and:
+    - file.hasTag("mpu/episode")
+formulas:
+  year: note.date.year
+views:
+  - type: table
+    name: All Episodes
+    order:
+      - file.name
+      - title
+      - date
+    sort:
+      - property: episode
+        direction: DESC
+  - type: table
+    name: Recent
+    order:
+      - date
+      - title
+    sort:
+      - property: episode
+        direction: DESC
+    limit: 10
+  - type: table
+    name: By Sponsor
+    groupBy:
+      property: sponsors
+      direction: ASC
+    order:
+      - file.name
+      - title
+      - episode
+      - date
+  - type: table
+    name: By Year
+    groupBy:
+      property: formula.year
+      direction: DESC
+    order:
+      - file.name
+      - title
+      - episode
+      - date
