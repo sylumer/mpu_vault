@@ -1,1 +1,6 @@
-{}
+{
+  "showViewHeader": true,
+  "enabledCssSnippets": [
+    "mpu-relay"
+  ]
+}
