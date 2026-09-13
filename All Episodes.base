@@ -16,6 +16,7 @@ views:
   - type: table
     name: Recent
     order:
+      - file.name
       - date
       - title
     sort:
